@@ -211,16 +211,16 @@ app.delete('/user/:uid/:noteuid', (req, res) => {
 		});
 	}
 
-	const findnoteIndex = findUser.notes.findIndex((note) => note.id === noteuid);
+	const findNoteIndex = findUser.notes.findIndex((note) => note.id === noteuid);
 
-	if (findnoteIndex < 0) {
+	if (findNoteIndex < 0) {
 		return res.status(404).json({
 			success: false,
 			message: 'note não encontrada!',
 		});
 	}
 
-	findUser.notes.splice(findnoteIndex, 1);
+	findUser.notes.splice(findNoteIndex, 1);
 
 	return res.status(200).json({
 		success: true,
